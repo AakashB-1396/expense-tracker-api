@@ -25,7 +25,7 @@ class TestViews(TestCase):
     def setUp(self):
         api_key, key = APIKey.objects.create_key(name="expense-service")
         self.client = APIClient()
-        self.client.credentials(HTTP_AUTHORIZATION=f"Api-Key{key}")
+        self.client.credentials(HTTP_AUTHORIZATION=f"Api-Key {key}")
 
     def test_expense_create(self):
         payload = {
